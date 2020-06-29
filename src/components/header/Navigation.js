@@ -3,6 +3,7 @@ import React, { Componenet } from "react";
 import { Navbar, Form, Nav, Button, FormControl } from "react-bootstrap";
 import LoginPage from "../login/LoginPage";
 import "./Navigation.css";
+import message from "../landingPage/image/message.png";
 
 let orangeLogo =
   "https://assets-global.website-files.com/5e1409589314cc7fecaa2d8e/5e4bb43bf08158791d23d7ce_nav-logo-rose.svg";
@@ -67,10 +68,7 @@ export default class Naav extends React.Component {
               style={
                 this.state.hover ? { color: "#677080" } : { color: "#ffffff" }
               }
-            >
-              {" "}
-              Blog
-            </Nav.Link>
+            ></Nav.Link>
             <Nav.Link
               href="/resource"
               style={
@@ -95,7 +93,10 @@ export default class Naav extends React.Component {
               Login
             </Nav.Link>
             <div className="button">
-              <img src="https://assets-global.website-files.com/5e1409589314cc7fecaa2d8e/5e1409589314cc42cfaa3205_ic_checklist.svg" />{" "}
+              <img
+                src={message}
+                style={{ marginBottom: "8px", marginRight: "8px" }}
+              />{" "}
               Talk to us
             </div>
           </Nav>

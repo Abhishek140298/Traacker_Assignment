@@ -1,11 +1,11 @@
 import React from "react";
 import "./ImageText.css";
+import sideopen from "../image/sideopen.png";
 
 export default class ImageText extends React.Component {
   renderImageView = (data, index) => {
     return (
       <div>
-        
         <img className="image_name" src={data.avatar_url} />
       </div>
     );
@@ -42,7 +42,22 @@ export default class ImageText extends React.Component {
             {data.small_para4}
           </p>
         ) : null}
-        <button>{data.button_text}</button>
+        <div
+          style={{
+            borderStyle: "solid",
+            borderWidth: "1px",
+            borderColor: "#250e62",
+            width: "13vw",
+            height: "8vh",
+            borderRadius: "5px",
+            color: "#250e62",
+            paddingLeft: "20px",
+            paddingTop: "9px",
+          }}
+        >
+          {data.button_text}
+          <img src={sideopen} />
+        </div>
       </div>
     );
   };

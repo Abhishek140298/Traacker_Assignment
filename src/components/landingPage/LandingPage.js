@@ -9,6 +9,7 @@ import ImageTextList from "./image_text/ImageTextList";
 import TraackerPressList from "./traacker_press/TraackerPressList";
 import CustomerServiceList from "./customer_service/CustomerServiceList";
 import LatestArticleList from "./latest_article/LatestArticleList";
+import dropdown from "./image/dropdown.png";
 
 export default class LandingPage extends Component {
   render() {
@@ -31,7 +32,10 @@ export default class LandingPage extends Component {
             marketers use to optimize investments, streamline campaigns, and
             scale programs.
           </div>
-          <button className="discover-traacker">Discover Traacker</button>
+          <div className="discover-traacker">
+            <img src={dropdown} />
+            Discover Traacker
+          </div>
         </div>
 
         <ImageList />
@@ -44,7 +48,20 @@ export default class LandingPage extends Component {
 
           <InfluencerList />
           <div className="button_influencer">
-            <button>Meet our Customers</button>
+            <div
+              style={{
+                borderRadius: "5px",
+                borderColor: "#250e62",
+                borderStyle: "solid",
+                width: "13vw",
+                height: "8vh",
+                paddingLeft: "10px",
+                borderWidth: "1px",
+                paddingTop: "9px",
+              }}
+            >
+              Meet our Customers
+            </div>
           </div>
           <ImageTextList />
         </div>
@@ -113,7 +130,6 @@ export default class LandingPage extends Component {
           LATEST ARTICLE
         </div>
         <LatestArticleList />
-        
       </div>
     );
   }

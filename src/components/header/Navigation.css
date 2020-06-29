@@ -1,0 +1,43 @@
+.mr-auto {
+  margin-left: 600px;
+}
+.Login {
+  padding-left: 500px;
+  padding-top: 22px;
+  padding-bottom: 25px;
+}
+.button {
+  background-color: red;
+  display: flex;
+  width: 10vw;
+  padding-top: 7px;
+  border-radius: 5px;
+  justify-content: center;
+  color: white;
+}
+.nav_bar:hover {
+  background-color: white;
+}
+.nav_bar {
+  min-height: 12vh;
+  height: auto;
+  padding-left: 57px;
+}
+.About_Traacker {
+  display: flex;
+  justify-content: center;
+  padding-left: 65px;
+}
+.product-div {
+  padding-left: 350px;
+
+  background-color: white;
+}
+.solution_div {
+  font-size: 30px;
+  padding-left: 20px;
+}
+.main_product {
+  background-color: white;
+  display: flex;
+}

@@ -1,0 +1,10 @@
+.customer_stories_box {
+  width: 32vw;
+  padding-left: 20px;
+}
+.customer {
+  display: flex;
+  width: 8vw;
+  padding-left: 20px;
+  padding-top: 20px;
+}

@@ -1,0 +1,27 @@
+.article_image {
+  height: 28vh;
+  width: 22vw;
+}
+.articles {
+  padding-right: 75%;
+  border-style: solid;
+  border-width: 1px;
+  height: 45vh;
+  margin-right: 15px;
+}
+.latest_article {
+  display: flex;
+  width: 20px;
+  padding-left: 50px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.stay_in_know {
+  font-size: 20px;
+  padding-left: 10px;
+  padding-right: 70%;
+}
+.input_button {
+  display: flex;
+}

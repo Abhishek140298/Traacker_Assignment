@@ -1,0 +1,23 @@
+.image_text {
+  display: flex;
+  background-color: #ffcfbe;
+  padding-top: 60px;
+}
+
+.image_name {
+  height: 80vh;
+  width: 40vw;
+}
+.text {
+  padding-right: 290px;
+  padding-left: 30px;
+}
+
+@media only screen and (max-width: 900px) {
+  .image_text {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffcfbe;
+    padding-top: 60px;
+  }
+}

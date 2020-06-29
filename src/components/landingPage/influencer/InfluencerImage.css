@@ -1,0 +1,12 @@
+.round_image_div {
+  display: flex;
+
+  justify-content: center;
+}
+.round_image {
+  border-radius: 70%;
+  height: 10vh;
+}
+.inner_round_image_div {
+  margin-left: 20px;
+}

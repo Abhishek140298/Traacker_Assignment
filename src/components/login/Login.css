@@ -1,0 +1,74 @@
+.login-container {
+  background-color: bisque;
+  height: auto;
+  width: 100%;
+
+  align-items: center;
+  background-image: url("https://app.traackr.com/img/login_bg_analytics.jpg");
+  background-size: cover;
+  padding-left: 295px;
+  padding-top: 10%;
+}
+
+.main-box {
+  background-color: white;
+  width: 52vw;
+  height: 50vh;
+  padding-top: 5%;
+}
+.Welcome-box {
+  width: 45vw;
+  height: 11vh;
+  margin-left: 45px;
+  opacity: 0.5;
+
+  display: flex;
+  justify-content: center;
+  font-family: "Helvetica Neue", "Open Sans", sans-serif, sans-serif;
+  font-size: 28px;
+}
+.email-enter-box {
+  background-color: white;
+  width: 45vw;
+  height: 8vh;
+  margin-left: 45px;
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.email-form {
+  width: 25vw;
+  height: 15vh;
+  margin-left: 180px;
+  margin-top: 10px;
+}
+
+.input-box {
+  width: 25vw;
+  margin-top: 10px;
+}
+.login-button {
+  width: 25vw;
+  background-color: #fd7463;
+  margin-top: 12px;
+  border-radius: 8px;
+}
+.red-line {
+  background-color: red;
+  width: 100vw;
+  height: 1vh;
+}
+.top-icon {
+  width: 68%;
+  height: 20vh;
+  padding-top: 20px;
+  padding-left: 270px;
+}
+.footer-box {
+  width: 35vw;
+  margin-top: 40px;
+  margin-left: 100px;
+}

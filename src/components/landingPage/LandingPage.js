@@ -10,6 +10,12 @@ import TraackerPressList from "./traacker_press/TraackerPressList";
 import CustomerServiceList from "./customer_service/CustomerServiceList";
 import LatestArticleList from "./latest_article/LatestArticleList";
 import dropdown from "./image/dropdown.png";
+import facebook from "./image/facbook.png";
+import instagram from "./image/instagram.png";
+import sideopen from "./image/openup.png";
+
+import linkedin from "./image/linkedin.png";
+import twiter from "./image/twiter.png";
 
 export default class LandingPage extends Component {
   render() {
@@ -130,6 +136,87 @@ export default class LandingPage extends Component {
           LATEST ARTICLE
         </div>
         <LatestArticleList />
+        <div className="Footer">
+          <div className="main_footer_div">
+            <div className="platform">
+              <img src="https://assets-global.website-files.com/5e1409589314cc7fecaa2d8e/5e413b3697f1ef29b22504f6_logo-footer.svg" />
+              <p>The data-driven influencer marketing platform.</p>
+              <div>
+                <img src={facebook} />
+                <img src={instagram} />
+
+                <img src={linkedin} />
+                <img src={twiter} />
+              </div>
+              <img
+                style={{ width: "9vw", marginTop: "10px" }}
+                src="https://assets-global.website-files.com/5e1409589314cc7fecaa2d8e/5ed74ec9150cb03c5ba3c854_US-Privacy-Shield.png"
+              />
+            </div>
+            <div className="product_footer">
+              <h6
+                style={{
+                  fontFamily: "avenir",
+                  fontSize: "16px",
+                  color: "#250e62",
+                }}
+              >
+                PRODUCT
+              </h6>
+              <div className="footer_link">For Brand</div>
+              <div className="footer_link">For Agencies</div>
+            </div>
+            <div className="company_footer">
+              <h6
+                style={{
+                  fontFamily: "avenir",
+                  fontSize: "16px",
+                  color: "#250e62",
+                }}
+              >
+                COMPANY
+              </h6>
+              <div className="footer_link">About Us</div>
+              <div className="footer_link">Customers</div>
+              <div className="footer_link">Careers</div>
+              <div className="footer_link">Partner</div>
+              <div className="footer_link">Press</div>
+            </div>
+          </div>
+          <div className="last_footer">
+            <div className="image_div_footer">
+              <img
+                style={{ height: "3vh", marginRight: "8px", paddingTop: "5px" }}
+                src="https://assets-global.website-files.com/5e1409589314cc7fecaa2d8e/5e1409589314cc7968aa32cf_en.png"
+              />
+              EN
+              <img
+                style={{
+                  marginLeft: "8px",
+                  paddingTop: "5px",
+                  height: "4vh",
+                  width: "2vw",
+                }}
+                src={sideopen}
+              />
+            </div>
+            <div className="links">
+              <p>© 2020 Traackr. All Rights Reserved.</p>
+              <a style={{ paddingLeft: "15px" }} href="#home">
+                Terms of Service
+              </a>
+              <a style={{ paddingLeft: "15px" }} href="#home">
+                Privacy Policy
+              </a>
+              <a style={{ paddingLeft: "15px" }} href="#home">
+                Influencer Privacy
+              </a>
+              <a style={{ paddingLeft: "15px" }} href="#home">
+                Do not sell my Personal Information
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

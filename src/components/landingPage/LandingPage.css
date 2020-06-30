@@ -95,3 +95,49 @@
   padding-left: 35%;
   padding-top: 5%;
 }
+.main_footer_div {
+  display: flex;
+  padding-top: 20px;
+  margin-left: 35px;
+}
+.platform {
+  padding-top: 35px;
+  padding-left: 10px;
+  max-width: 20vw;
+}
+.product_footer {
+  margin-left: 45%;
+
+  padding-top: 35px;
+}
+.footer_link {
+  font-family: "Avenir";
+  font-size: 16px;
+  color: "#677080";
+  margin-bottom: 8px;
+}
+.company_footer {
+  padding-top: 35px;
+  margin-left: 10%;
+}
+.last_footer {
+  background-color: #f2f7fb;
+  padding-left: 45px;
+  padding-top: 10px;
+  display: flex;
+}
+.image_div_footer {
+  display: flex;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  width: fit-content;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 5vh;
+}
+.links {
+  margin-left: 200px;
+  padding-top: 5px;
+  display: flex;
+}

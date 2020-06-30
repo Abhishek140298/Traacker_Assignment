@@ -68,7 +68,9 @@ export default class Naav extends React.Component {
               style={
                 this.state.hover ? { color: "#677080" } : { color: "#ffffff" }
               }
-            ></Nav.Link>
+            >
+              Blog
+            </Nav.Link>
             <Nav.Link
               href="/resource"
               style={

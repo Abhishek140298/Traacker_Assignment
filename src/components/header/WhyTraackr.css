@@ -1,0 +1,30 @@
+.why_traackr_main_div {
+  max-width: 25vw;
+  background-color: white;
+}
+.why_traackr_customers {
+  margin-right: 20%;
+}
+.customers {
+  text-decoration: none;
+}
+.customer_image {
+  height: 5vh;
+}
+.customer_para {
+  padding-right: 20%;
+  margin-top: 20px;
+  font-size: 16px;
+  font-family: "Avenir";
+  color: #677080;
+}
+.customus {
+  display: flex;
+  margin-left: 30%;
+  padding-top: 50px;
+  font-size: 20px;
+  margin-right: 20px;
+}
+.customus {
+  background-color: white;
+}

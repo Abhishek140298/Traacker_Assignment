@@ -4,11 +4,11 @@ import "./Login.css";
 export default class LoginPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { email: "" };
+    this.props = { email: "" };
   }
   render() {
     return (
-      console.log(this.state.email),
+      console.log(this.props.email),
       (
         <div>
           <div className="red-line"></div>

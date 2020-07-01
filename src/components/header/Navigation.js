@@ -5,76 +5,118 @@ import LoginPage from "../login/LoginPage";
 import "./Navigation.css";
 import message from "../landingPage/image/message.png";
 
+import ProductDiv from "./ProductDiv";
+import CustomerList from "./WhyTraackr.js";
+
 let orangeLogo =
   "https://assets-global.website-files.com/5e1409589314cc7fecaa2d8e/5e4bb43bf08158791d23d7ce_nav-logo-rose.svg";
 let blueLogo =
   "https://assets-global.website-files.com/5e1409589314cc7fecaa2d8e/5e4bb4398d9bb47b6830dc79_nav-logo-blue.svg";
 
 export default class Naav extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hover: false,
-      hover_product: false,
-    };
+  constructor() {
+    super();
   }
-  mouseevent() {
-    this.setState((state) => ({ hover: !state.hover }));
-  }
-  mouseeeventout() {
-    this.setState((state) => ({ hover: false }));
-  }
-  mouseonproduct() {
-    this.setState((state) => ({ hover_product: !state.hover_product }));
-  }
-  mouseoutproduct() {
-    this.setState((state) => ({ hover_product: false }));
-  }
+  mouseoverNav = () => {
+    this.props.mouseoverNav();
+  };
+  mouseoverProduct = () => {
+    this.props.mouseoverProduct();
+  };
+  mouseoutNav = () => {
+    this.props.mouseoutNav();
+  };
+  mouseoutProduct = () => {
+    this.props.mouseoutProduct();
+  };
+  mouseoverWhyTraackr = () => {
+    this.props.mouseoverWhyTraackr();
+  };
+  mouseoutWhyTraackr = () => {
+    this.props.mouseoutWhyTraackr();
+  };
+
   render() {
-    console.log(this.state.hover);
+    console.log(this.props.hover_product, "abhi");
     return (
       <div className="header">
         <Navbar
           className="nav_bar"
-          onMouseOut={this.mouseeeventout.bind(this)}
-          onMouseOver={this.mouseevent.bind(this)}
+          onMouseOut={this.mouseoutNav.bind(this)}
+          onMouseOver={this.mouseoverNav.bind(this)}
+          style={
+            this.props.hover_product || this.props.hover_whyTraackr
+              ? { backgroundColor: "#ffffff" }
+              : null
+          }
         >
           <Nav>
             <Navbar.Brand href="/">
-              <img src={this.state.hover ? blueLogo : orangeLogo} />
+              <img
+                src={
+                  this.props.hover ||
+                  this.props.hover_product ||
+                  this.props.hover_whyTraackr
+                    ? blueLogo
+                    : orangeLogo
+                }
+              />
             </Navbar.Brand>
           </Nav>
           <Nav className="About_Traacker">
             <Nav.Link
               href="#home"
-              onMouseOver={this.mouseonproduct.bind(this)}
+              onMouseOver={this.mouseoverProduct.bind(this)}
               /*onMouseOut={this.mouseoutproduct.bind(this)}*/
               style={
-                this.state.hover ? { color: "#677080" } : { color: "#ffffff" }
+                this.props.hover ||
+                this.props.hover_product ||
+                this.props.hover_whyTraackr
+                  ? { color: "#677080" }
+                  : { color: "#ffffff" }
               }
             >
               Product
             </Nav.Link>
             <Nav.Link
               href="#home"
+              /*   onMouseOver={this.mouseoutProduct.bind(this)}*/
+              onMouseOver={() => {
+                this.mouseoverWhyTraackr();
+                this.mouseoutProduct();
+              }}
               style={
-                this.state.hover ? { color: "#677080" } : { color: "#ffffff" }
+                this.props.hover ||
+                this.props.hover_product ||
+                this.props.hover_whyTraackr
+                  ? { color: "#677080" }
+                  : { color: "#ffffff" }
               }
             >
               WhyTracker?
             </Nav.Link>
             <Nav.Link
               href="/blogs"
+              onMouseOver={this.mouseoutProduct.bind(this)}
               style={
-                this.state.hover ? { color: "#677080" } : { color: "#ffffff" }
+                this.props.hover ||
+                this.props.hover_product ||
+                this.props.hover_whyTraackr
+                  ? { color: "#677080" }
+                  : { color: "#ffffff" }
               }
             >
               Blog
             </Nav.Link>
             <Nav.Link
+              onMouseOver={this.mouseoutProduct.bind(this)}
               href="/resource"
               style={
-                this.state.hover ? { color: "#677080" } : { color: "#ffffff" }
+                this.props.hover ||
+                this.props.hover_product ||
+                this.props.hover_whyTraackr
+                  ? { color: "#677080" }
+                  : { color: "#ffffff" }
               }
             >
               Resources
@@ -83,49 +125,54 @@ export default class Naav extends React.Component {
           <Nav
             className="Login"
             style={
-              this.state.hover ? { color: "#677080" } : { color: "#ffffff" }
+              this.props.hover ||
+              this.props.hover_product ||
+              this.props.hover_whyTraackr
+                ? { color: "#677080" }
+                : { color: "#ffffff" }
             }
           >
             <Nav.Link
               href="/users/login"
+              onMouseOver={this.mouseoutProduct.bind(this)}
               style={
-                this.state.hover ? { color: "#677080" } : { color: "#ffffff" }
+                this.props.hover ||
+                this.props.hover_product ||
+                this.props.hover_whyTraackr
+                  ? { color: "#677080" }
+                  : { color: "#ffffff" }
               }
             >
               Login
             </Nav.Link>
-            <div className="button">
+            <div
+              className="button"
+              onMouseOver={this.mouseoutProduct.bind(this)}
+            >
               <img
                 src={message}
-                style={{ marginBottom: "8px", marginRight: "8px" }}
+                style={{
+                  marginBottom: "8px",
+                  marginRight: "8px",
+                }}
               />{" "}
               Talk to us
             </div>
           </Nav>
         </Navbar>
-        {this.state.hover_product ? this.productdiv() : null}
+
+        {this.props.hover_product ? this.productdiv() : null}
+        {this.props.hover_whyTraackr ? this.whyTraackr() : null}
       </div>
     );
   }
   productdiv() {
-    console.log(this.state.hover_product);
+    return <ProductDiv />;
+  }
+  whyTraackr() {
     return (
-      <div
-        className="main_product"
-        /* onMouseOver={this.mouseonproduct.bind(this)}*/
-        onMouseOut={this.mouseoutproduct.bind(this)}
-      >
-        <img src="https://assets-global.website-files.com/5e1409589314cc7fecaa2d8e/5e1409589314cc42cfaa3205_ic_checklist.svg" />
-        <div className="solution_div">
-          Solution{" "}
-          <div style={{ fontSize: "18px", paddingTop: "20px" }}>for Brands</div>
-          <div style={{ fontSize: "18px", paddingTop: "20px" }}>
-            For Agencies
-          </div>
-        </div>
-
-        <img src="https://assets-global.website-files.com/5e1409589314cc7fecaa2d8e/5e1409589314cc42cfaa3205_ic_checklist.svg" />
-        <div>Use Cases</div>
+      <div style={{ backgroundColor: "white" }}>
+        <CustomerList />
       </div>
     );
   }

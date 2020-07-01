@@ -1,0 +1,12 @@
+.product_div {
+  display: flex;
+  background-color: white;
+}
+.solution_div {
+  margin-left: 40%;
+  font-size: 20px;
+}
+.usecase_div {
+  padding-top: "10px";
+  padding-left: 10%;
+}

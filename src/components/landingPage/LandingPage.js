@@ -18,12 +18,56 @@ import linkedin from "./image/linkedin.png";
 import twiter from "./image/twiter.png";
 
 export default class LandingPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hover: false,
+      hover_product: false,
+      hover_whyTraackr: false,
+    };
+  }
+  mouseevent() {
+    this.setState(() => ({ hover: !this.props.hover }));
+  }
+  mouseeeventout() {
+    this.setState((state) => ({ hover: false }));
+  }
+  mouseonproduct() {
+    this.setState(() => ({
+      hover_product: !this.props.hover_product,
+    }));
+  }
+  mouseoutproduct() {
+    this.setState((state) => ({ hover_product: false }));
+  }
+  mouseonwhyTraackr() {
+    this.setState(() => ({
+      hover_whyTraackr: !this.props.hover_whytTraackr,
+    }));
+  }
+  mouseoutwhyTraackr() {
+    this.setState((state) => ({ hover_whyTraackr: false }));
+  }
   render() {
     return (
       <div className="main_nav_box">
         <div className="inflenced_data-text">
-          <Hoc cmp={Header} />
-          <h1
+          <Header
+            hover={this.state.hover}
+            hover_product={this.state.hover_product}
+            hover_whyTraackr={this.state.hover_whyTraackr}
+            mouseoverNav={() => this.mouseevent()}
+            mouseoverProduct={() => this.mouseonproduct()}
+            mouseoutNav={() => this.mouseeeventout()}
+            mouseoutProduct={() => this.mouseoutproduct()}
+            mouseoverWhyTraackr={() => this.mouseonwhyTraackr()}
+            mouseoutWhyTraackr={() => this.mouseoutwhyTraackr()}
+          />
+          <div
+            onMouseOver={() => {
+              this.mouseoutproduct();
+              this.mouseoutwhyTraackr();
+            }}
             style={{
               color: "#ffcfbe",
               fontSize: "40px",
@@ -32,7 +76,7 @@ export default class LandingPage extends Component {
             }}
           >
             Influenced by Data
-          </h1>
+          </div>
           <div className="para_data_driven">
             Traackr is the data-driven influencer marketing platform that
             marketers use to optimize investments, streamline campaigns, and
@@ -186,7 +230,11 @@ export default class LandingPage extends Component {
           <div className="last_footer">
             <div className="image_div_footer">
               <img
-                style={{ height: "3vh", marginRight: "8px", paddingTop: "5px" }}
+                style={{
+                  height: "3vh",
+                  marginRight: "8px",
+                  paddingTop: "5px",
+                }}
                 src="https://assets-global.website-files.com/5e1409589314cc7fecaa2d8e/5e1409589314cc7968aa32cf_en.png"
               />
               EN

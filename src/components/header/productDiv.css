@@ -10,3 +10,31 @@
   padding-top: "10px";
   padding-left: 10%;
 }
+.solution_image {
+  padding-top: 10px;
+  margin-right: 15px;
+}
+.solution_inner_div {
+  padding-left: 40px;
+  padding-top: 20px;
+}
+.use_case_links {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: avenir;
+  color: #677080;
+}
+.usecase_div {
+}
+.usecase_parts {
+  display: flex;
+}
+.usecase_parts_inner_div {
+  padding-left: 40px;
+  padding-top: 25px;
+}
+.usecase_image {
+  padding-top: 10px;
+  margin-right: 15px;
+  width: 2vw;
+}

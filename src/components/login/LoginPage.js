@@ -14,7 +14,7 @@ export default class LoginPage extends Component {
           <div className="red-line"></div>
           <div className="login-container">
             <div className="top-icon">
-              <img src="https://assets-global.website-files.com/5e1409589314cc7fecaa2d8e/5e4bb4398d9bb47b6830dc79_nav-logo-blue.svg" />
+              <img src="https://assets-global.website-files.com/5e1409589314cc7fecaa2d8e/5e413b3697f1ef29b22504f6_logo-footer.svg" />
             </div>
             <div className="main-box">
               <div className="Welcome-box">

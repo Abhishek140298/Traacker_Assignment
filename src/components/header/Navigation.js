@@ -66,7 +66,10 @@ export default class Naav extends React.Component {
           <Nav className="About_Traacker">
             <Nav.Link
               href="#home"
-              onMouseOver={this.mouseoverProduct.bind(this)}
+              onMouseOver={() => {
+                this.mouseoutWhyTraackr();
+                this.mouseoverProduct();
+              }}
               /*onMouseOut={this.mouseoutproduct.bind(this)}*/
               style={
                 this.props.hover ||
@@ -97,7 +100,10 @@ export default class Naav extends React.Component {
             </Nav.Link>
             <Nav.Link
               href="/blogs"
-              onMouseOver={this.mouseoutProduct.bind(this)}
+              onMouseOver={() => {
+                this.mouseoutProduct();
+                this.mouseoutWhyTraackr();
+              }}
               style={
                 this.props.hover ||
                 this.props.hover_product ||
@@ -109,7 +115,10 @@ export default class Naav extends React.Component {
               Blog
             </Nav.Link>
             <Nav.Link
-              onMouseOver={this.mouseoutProduct.bind(this)}
+              onMouseOver={() => {
+                this.mouseoutProduct();
+                this.mouseoutWhyTraackr();
+              }}
               href="/resource"
               style={
                 this.props.hover ||
@@ -134,7 +143,10 @@ export default class Naav extends React.Component {
           >
             <Nav.Link
               href="/users/login"
-              onMouseOver={this.mouseoutProduct.bind(this)}
+              onMouseOver={() => {
+                this.mouseoutProduct();
+                this.mouseoutWhyTraackr();
+              }}
               style={
                 this.props.hover ||
                 this.props.hover_product ||
@@ -147,7 +159,10 @@ export default class Naav extends React.Component {
             </Nav.Link>
             <div
               className="button"
-              onMouseOver={this.mouseoutProduct.bind(this)}
+              onMouseOver={() => {
+                this.mouseoutProduct();
+                this.mouseoutWhyTraackr();
+              }}
             >
               <img
                 src={message}

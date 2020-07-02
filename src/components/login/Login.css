@@ -1,74 +1,101 @@
-.login-container {
-  background-color: bisque;
-  height: auto;
-  width: 100%;
-
+.main_div {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  background-image: url("https://app.traackr.com/img/login_bg_analytics.jpg");
-  background-size: cover;
-  padding-left: 295px;
-  padding-top: 10%;
+  padding-top: 20vh;
 }
-
-.main-box {
+.main_login_div {
   background-color: white;
-  width: 52vw;
-  height: 50vh;
-  padding-top: 5%;
-}
-.Welcome-box {
-  width: 45vw;
-  height: 11vh;
-  margin-left: 45px;
-  opacity: 0.5;
 
   display: flex;
-  justify-content: center;
-  font-family: "Helvetica Neue", "Open Sans", sans-serif, sans-serif;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 25px;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  padding-bottom: 50px;
+  padding-top: 35px;
+  opacity: 0.6;
+}
+
+.logo {
+  height: 10vh;
+}
+.login_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 100%;
+}
+
+.welcome {
+  font-family: helvetica;
+  font-weight: lighter;
   font-size: 28px;
 }
-.email-enter-box {
-  background-color: white;
-  width: 45vw;
-  height: 8vh;
-  margin-left: 45px;
-  margin-top: 0px;
-  display: flex;
-  justify-content: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-}
+.submit_button {
+  margin-top: 20px;
 
-.email-form {
-  width: 25vw;
-  height: 15vh;
-  margin-left: 180px;
-  margin-top: 10px;
-}
-
-.input-box {
-  width: 25vw;
-  margin-top: 10px;
-}
-.login-button {
-  width: 25vw;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  max-width: 41vh;
   background-color: #fd7463;
-  margin-top: 12px;
-  border-radius: 8px;
+  opacity: none;
+  font-family: helvetica;
+  font-weight: lighter;
+  border-radius: 7px;
 }
-.red-line {
-  background-color: red;
-  width: 100vw;
-  height: 1vh;
+.signup {
+  margin-top: 10px;
+  background-color: #fd7463;
+  opacity: 1;
+  font-family: helvetica;
+  font-weight: lighter;
 }
-.top-icon {
-  width: 68%;
-  height: 20vh;
-  padding-top: 20px;
-  padding-left: 270px;
+.enter_email {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  max-width: 40vh;
+  font-family: helvetica;
+  font-weight: lighter;
+
+  width: 100%;
 }
-.footer-box {
-  width: 35vw;
-  margin-top: 40px;
-  margin-left: 100px;
+.red_line {
+  background: url("https://app.traackr.com/img/login_bg_analytics.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+.links_div {
+  margin-top: 60px;
+}
+.top_red_line {
+  background-color: #fd7463;
+  height: 7px;
+  width: 100%;
+  position: fixed;
+}
+a {
+  text-decoration: none;
+  font-family: helvetica;
+  font-weight: lighter;
+  color: white;
+  font-size: 14px;
+}
+p {
+  font-family: helvetica;
+  font-weight: lighter;
+  color: white;
+  font-size: 14px;
+}
+.enter {
+  font-family: helvetica;
+  font-weight: lighter;
+  font-size: 18px;
 }

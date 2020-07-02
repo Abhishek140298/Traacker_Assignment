@@ -8,47 +8,36 @@ export default class LoginPage extends Component {
   }
   render() {
     return (
-      console.log(this.props.email),
-      (
-        <div>
-          <div className="red-line"></div>
-          <div className="login-container">
-            <div className="top-icon">
-              <img src="https://assets-global.website-files.com/5e1409589314cc7fecaa2d8e/5e413b3697f1ef29b22504f6_logo-footer.svg" />
-            </div>
-            <div className="main-box">
-              <div className="Welcome-box">
-                <h2>Welcome To Traacker</h2>
-              </div>
-              <div className="email-enter-box">
-                <h3>Enter Your Email</h3>
-              </div>
-              <div className="email-form">
-                <form>
-                  <input
-                    className="input-box"
-                    placeholder="Enter your email"
-                    onChange={(e) => {
-                      this.setState({
-                        email: e.target.value,
-                      });
-                    }}
-                  />
+      <div className="red_line">
+        <div className="top_red_line"></div>
+        <div className="main_div">
+          <img
+            className="logo"
+            src="https://app.traackr.com/img/svg/logo-white.svg"
+          />
 
-                  <button className="login-button">Next</button>
-                </form>
-              </div>
-            </div>
-            <div className="footer-box">
-              <p>
-                © 2020 <a href="#home">Traacker</a>|
-                <a href="#home">Terms of Service</a>|
-                <a href="#home">Privacy Policy</a>
-              </p>
-            </div>
+          <div className="main_login_div">
+            <h1 className="welcome">Welcome to Traackr</h1>
+            <h4 className="enter">Enter Your Email</h4>
+            <form className="login_form">
+              <input
+                className="enter_email"
+                placeholder="enter your email id"
+              ></input>
+
+              <button className="submit_button">Login</button>
+              <button className="signup">Signup</button>
+            </form>
+          </div>
+          <div className="links_div">
+            <p>
+              © 2020 <a href="#home">Traacker</a>|
+              <a href="#home">Terms of Service</a>|
+              <a href="#home">Privacy Policy</a>
+            </p>
           </div>
         </div>
-      )
+      </div>
     );
   }
 }

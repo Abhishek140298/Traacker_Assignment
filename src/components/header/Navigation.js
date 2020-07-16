@@ -7,15 +7,37 @@ import message from "../landingPage/image/message.png";
 
 import ProductDiv from "./ProductDiv";
 import CustomerList from "./WhyTraackr.js";
+import bubidea from "../landingPage/image/bubidea.png";
+import forward from "../landingPage/image/forward.png";
+import threeline from "../landingPage/image/threeline.png";
+import { Redirect } from "react-router-dom";
 
 let orangeLogo =
   "https://assets-global.website-files.com/5e1409589314cc7fecaa2d8e/5e4bb43bf08158791d23d7ce_nav-logo-rose.svg";
 let blueLogo =
   "https://assets-global.website-files.com/5e1409589314cc7fecaa2d8e/5e4bb4398d9bb47b6830dc79_nav-logo-blue.svg";
 
+const links = [
+  { list: "Customer" },
+  { list: "AboutUs" },
+  { list: "Blog" },
+  { list: "Resources" },
+];
 export default class Naav extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.state = {
+      clickOnimage: false,
+      redirect: null,
+    };
+  }
+  onclickTalkToUs() {
+    this.setState(() => ({ redirect: "/talktous" }));
+  }
+  onclickImage() {
+    this.setState(() => ({
+      clickOnimage: !this.state.clickOnimage,
+    }));
   }
   mouseoverNav = () => {
     this.props.mouseoverNav();
@@ -35,15 +57,24 @@ export default class Naav extends React.Component {
   mouseoutWhyTraackr = () => {
     this.props.mouseoutWhyTraackr();
   };
-
+  mouseoverBlogPage = () => {
+    this.props.mouseoverBlogPage();
+  };
+  mouseoutBlogPage = () => {
+    this.props.mouseoutBlogPage();
+  };
   render() {
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect}></Redirect>;
+    }
     console.log(this.props.hover_product, "abhi");
     return (
       <div className="header">
         <Navbar
           className="nav_bar"
-          onMouseOut={this.mouseoutNav.bind(this)}
+          /*   onMouseOut={this.mouseoutNav.bind(this)}*/
           onMouseOver={this.mouseoverNav.bind(this)}
+          onMouseOut={this.mouseoutNav.bind(this)}
           style={
             this.props.hover_product || this.props.hover_whyTraackr
               ? { backgroundColor: "#ffffff" }
@@ -131,22 +162,9 @@ export default class Naav extends React.Component {
               Resources
             </Nav.Link>
           </Nav>
-          <Nav
-            className="Login"
-            style={
-              this.props.hover ||
-              this.props.hover_product ||
-              this.props.hover_whyTraackr
-                ? { color: "#677080" }
-                : { color: "#ffffff" }
-            }
-          >
-            <Nav.Link
-              href="/users/login"
-              onMouseOver={() => {
-                this.mouseoutProduct();
-                this.mouseoutWhyTraackr();
-              }}
+          <div className="login_button_div">
+            <Nav
+              className="Login"
               style={
                 this.props.hover ||
                 this.props.hover_product ||
@@ -155,29 +173,57 @@ export default class Naav extends React.Component {
                   : { color: "#ffffff" }
               }
             >
-              Login
-            </Nav.Link>
-            <div
-              className="button"
-              onMouseOver={() => {
-                this.mouseoutProduct();
-                this.mouseoutWhyTraackr();
-              }}
-            >
-              <img
-                src={message}
-                style={{
-                  marginBottom: "8px",
-                  marginRight: "8px",
+              <Nav.Link
+                className="login_click"
+                href="/users/login"
+                onMouseOver={() => {
+                  this.mouseoutProduct();
+                  this.mouseoutWhyTraackr();
                 }}
-              />{" "}
-              Talk to us
-            </div>
-          </Nav>
+                style={
+                  this.props.hover ||
+                  this.props.hover_product ||
+                  this.props.hover_whyTraackr
+                    ? { color: "#677080" }
+                    : { color: "#ffffff" }
+                }
+              >
+                Login
+              </Nav.Link>
+              <div
+                style={
+                  this.props.hover
+                    ? { backgroundColor: "#f9423a" }
+                    : { backgroundColor: "#250e62" }
+                }
+                className="button"
+                onMouseOver={() => {
+                  this.mouseoutProduct();
+                  this.mouseoutWhyTraackr();
+                }}
+                onClick={() => this.onclickTalkToUs()}
+              >
+                <img className="talk-msg-image" src={message} /> Talk to us
+              </div>
+            </Nav>
+          </div>
         </Navbar>
 
         {this.props.hover_product ? this.productdiv() : null}
         {this.props.hover_whyTraackr ? this.whyTraackr() : null}
+
+        <Navbar className="small-nav">
+          <div className="naav">
+            <Navbar.Brand href="#home">
+              <img src={blueLogo} />
+            </Navbar.Brand>
+
+            <div className="toggle_button">
+              <img src={threeline} onClick={this.onclickImage.bind(this)} />
+            </div>
+          </div>
+        </Navbar>
+        {this.state.clickOnimage ? this.navitems() : null}
       </div>
     );
   }
@@ -188,6 +234,27 @@ export default class Naav extends React.Component {
     return (
       <div style={{ backgroundColor: "white" }}>
         <CustomerList />
+      </div>
+    );
+  }
+  navitems() {
+    return (
+      <div>
+        <div className="navbar_product">
+          <div className="product">Product</div>
+          <div className="product_arrow">
+            <img src={forward} />
+          </div>
+        </div>
+
+        <div className="customer_blog">
+          {links.map((list) => (
+            <a className="links" href="#">
+              {list.list}
+            </a>
+          ))}
+          ;
+        </div>
       </div>
     );
   }

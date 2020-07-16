@@ -1,24 +1,30 @@
-.image_text {
-  display: flex;
-  background-color: #ffcfbe;
-  padding-top: 60px;
-}
-
 .image_name {
   height: 80vh;
   width: 40vw;
 }
-.text {
-  padding-right: 290px;
-  
-  padding-left: 30px;
+.text_div {
+  flex: 1;
 }
 
 @media only screen and (max-width: 900px) {
-  .image_text {
+  .image_text_main_div {
     display: flex;
     flex-direction: column;
     background-color: #ffcfbe;
     padding-top: 60px;
   }
+}
+
+.image_text_main_div {
+  display: flex;
+
+  background-color: #ffcfbe;
+  padding-top: 60px;
+}
+.image_div {
+  flex: 1;
+}
+.text {
+  padding-right: 190px;
+  margin-left: 30px;
 }

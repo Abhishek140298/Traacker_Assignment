@@ -16,6 +16,8 @@ import sideopen from "./image/openup.png";
 
 import linkedin from "./image/linkedin.png";
 import twiter from "./image/twiter.png";
+import collaspe from "./image/collaspe.png";
+//import {login_page_top_icon} from '../../constants/image'
 
 export default class LandingPage extends Component {
   constructor(props) {
@@ -24,6 +26,8 @@ export default class LandingPage extends Component {
       hover: false,
       hover_product: false,
       hover_whyTraackr: false,
+      hover_blog: false,
+      hover_influenced: false,
     };
   }
   mouseevent() {
@@ -48,7 +52,22 @@ export default class LandingPage extends Component {
   mouseoutwhyTraackr() {
     this.setState((state) => ({ hover_whyTraackr: false }));
   }
+  mouseonBlogPage() {
+    this.setState((state) => ({ hover_blog: true }));
+  }
+  mouseoutBlogPage() {
+    this.setState((state) => ({ hover_blog: false }));
+  }
+  mouseonInfluencerDiv() {
+    this.setState((state) => ({
+      hover_influenced: true,
+    }));
+  }
+  mouseoutInfluencerDiv() {
+    this.setState((state) => ({ hover_influenced: false }));
+  }
   render() {
+    console.log(this.state.hover_influenced, "abhishekya");
     return (
       <div className="main_nav_box">
         <div className="inflenced_data-text">
@@ -56,22 +75,26 @@ export default class LandingPage extends Component {
             hover={this.state.hover}
             hover_product={this.state.hover_product}
             hover_whyTraackr={this.state.hover_whyTraackr}
+            hover_blog={this.state.hover_blog}
             mouseoverNav={() => this.mouseevent()}
             mouseoverProduct={() => this.mouseonproduct()}
             mouseoutNav={() => this.mouseeeventout()}
             mouseoutProduct={() => this.mouseoutproduct()}
             mouseoverWhyTraackr={() => this.mouseonwhyTraackr()}
             mouseoutWhyTraackr={() => this.mouseoutwhyTraackr()}
+            mouseoverBlogPage={() => this.mouseonBlogPage()}
+            mouseoutBlogPage={() => this.mouseoutBlogPage()}
           />
           <div
             onMouseOver={() => {
               this.mouseoutproduct();
               this.mouseoutwhyTraackr();
+              this.mouseeeventout();
             }}
             style={{
               color: "#ffcfbe",
               fontSize: "40px",
-              paddingTop: "150px",
+              paddingTop: "100px",
               paddingLeft: "50px",
             }}
           >
@@ -82,9 +105,31 @@ export default class LandingPage extends Component {
             marketers use to optimize investments, streamline campaigns, and
             scale programs.
           </div>
-          <div className="discover-traacker">
-            <img src={dropdown} />
-            Discover Traacker
+          <div
+            className="dis_traac"
+            //onMouseOut={this.mouseoutInfluencerDiv.bind(this)}
+          >
+            <div
+              className="discover-traacker"
+              onMouseEnter={this.mouseonInfluencerDiv.bind(this)}
+              onMouseLeave={this.mouseoutInfluencerDiv.bind(this)}
+              style={
+                this.state.hover_influenced
+                  ? {
+                      borderBottomLeftRadius: "0px",
+                      borderBottomRightRadius: "0px",
+                    }
+                  : { borderRadius: "5px" }
+              }
+            >
+              Discover Traacker
+              <img
+                className="drop_down_button"
+                src={this.state.hover_influenced ? collaspe : dropdown}
+              />
+            </div>
+
+            {this.state.hover_influenced ? this.discoverTraacker() : null}
           </div>
         </div>
 
@@ -98,20 +143,7 @@ export default class LandingPage extends Component {
 
           <InfluencerList />
           <div className="button_influencer">
-            <div
-              style={{
-                borderRadius: "5px",
-                borderColor: "#250e62",
-                borderStyle: "solid",
-                width: "13vw",
-                height: "8vh",
-                paddingLeft: "10px",
-                borderWidth: "1px",
-                paddingTop: "9px",
-              }}
-            >
-              Meet our Customers
-            </div>
+            <div className="meet_our_customer">Meet our Customers</div>
           </div>
           <ImageTextList />
         </div>
@@ -124,34 +156,13 @@ export default class LandingPage extends Component {
         </div>
         <div style={{ backgroundColor: "#f2f7fb" }}>
           <div className="customer_stories">Customer Stories</div>
-          <p
-            style={{
-              paddingLeft: "30%",
-              paddingRight: "30%",
-              paddingTop: "2%",
-            }}
-          >
+          <p className="customer_stories_para" style={{}}>
             More than twenty of the top global advertisers and hundreds of
             emerging brands and agencies depend on Traackr everyday to make
             smarter influencer marketing decisions.
           </p>
           <CustomerServiceList />
-          <div
-            style={{
-              height: "8vh",
-              width: "20vw",
-              borderRadius: "8px",
-              marginLeft: "41%",
-              marginTop: "30px",
-              marginBottom: "40px",
-              color: "#250e62",
-              borderColor: "black",
-
-              borderStyle: "solid",
-              paddingTop: "9px",
-              paddingLeft: "30px",
-            }}
-          >
+          <div className="explore_more_casestudy">
             Explore More Case Studies
           </div>
         </div>
@@ -159,24 +170,9 @@ export default class LandingPage extends Component {
           <div style={{ fontSize: "40px", color: "white" }}>
             Ready to Get Started?
           </div>
-          <div
-            style={{
-              height: "8vh",
-              width: "15vw",
-              borderRadius: "10px",
-              marginLeft: "10%",
-              marginTop: "15px",
-              backgroundColor: "#f9423a",
-              display: "flex",
-              justifyContent: "center",
-              paddingTop: "13px",
-              color: "white",
-            }}
-          >
-            Contact Sale
-          </div>
+          <div className="contact_sale">Contact Sale</div>
         </div>
-        <div style={{ paddingTop: "20px", paddingLeft: "50px" }}>
+        <div className="latest-article" style={{}}>
           LATEST ARTICLE
         </div>
         <LatestArticleList />
@@ -198,28 +194,12 @@ export default class LandingPage extends Component {
               />
             </div>
             <div className="product_footer">
-              <h6
-                style={{
-                  fontFamily: "avenir",
-                  fontSize: "16px",
-                  color: "#250e62",
-                }}
-              >
-                PRODUCT
-              </h6>
+              <h6 className="product_footer_head">PRODUCT</h6>
               <div className="footer_link">For Brand</div>
               <div className="footer_link">For Agencies</div>
             </div>
             <div className="company_footer">
-              <h6
-                style={{
-                  fontFamily: "avenir",
-                  fontSize: "16px",
-                  color: "#250e62",
-                }}
-              >
-                COMPANY
-              </h6>
+              <h6 className="company_footer_head">COMPANY</h6>
               <div className="footer_link">About Us</div>
               <div className="footer_link">Customers</div>
               <div className="footer_link">Careers</div>
@@ -230,23 +210,11 @@ export default class LandingPage extends Component {
           <div className="last_footer">
             <div className="image_div_footer">
               <img
-                style={{
-                  height: "3vh",
-                  marginRight: "8px",
-                  paddingTop: "5px",
-                }}
+                className="image_footer"
                 src="https://assets-global.website-files.com/5e1409589314cc7fecaa2d8e/5e1409589314cc7968aa32cf_en.png"
               />
               EN
-              <img
-                style={{
-                  marginLeft: "8px",
-                  paddingTop: "5px",
-                  height: "4vh",
-                  width: "2vw",
-                }}
-                src={sideopen}
-              />
+              <img className="image_footer2" src={sideopen} />
             </div>
             <div className="links">
               <p>© 2020 Traackr. All Rights Reserved.</p>
@@ -265,6 +233,24 @@ export default class LandingPage extends Component {
             </div>
           </div>
         </div>
+      </div>
+    );
+  }
+  discoverTraacker() {
+    return (
+      <div
+        className=" discover_traackr_dropdown"
+        onMouseEnter={this.mouseonInfluencerDiv.bind(this)}
+        onMouseLeave={this.mouseoutInfluencerDiv.bind(this)}
+      >
+        <a className="links_discover_tracckr_button" href="/products">
+          For Brands
+        </a>
+        <hr className="link_line" />
+        <a className="links_discover_tracckr_button" href="/agencies">
+        
+          For Agencies
+        </a>
       </div>
     );
   }

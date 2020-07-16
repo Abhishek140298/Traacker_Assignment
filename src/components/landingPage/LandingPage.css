@@ -4,7 +4,7 @@
   /*  width: 98vw;
   background-repeat: no-repeat;
   background-size: 100% 100%;*/
-  min-height: 95vh;
+  min-height: 99vh;
   height: auto;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -31,15 +31,21 @@
 }
 .discover-traacker {
   background-color: #f9423a;
-  border-radius: 5px;
-  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+
   margin-left: 50px;
-  font-size: 20px;
-  width: 16vw;
-  height: 8vh;
-  padding-left: 10px;
-  padding-top: 8px;
+  margin-top: 20px;
   color: white;
+  font-family: Avenir;
+  font-size: 16px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-radius: 5px;
+}
+.drop_down_button {
+  padding-left: 10px;
 }
 .influencer {
 }
@@ -111,9 +117,9 @@
   padding-top: 35px;
 }
 .footer_link {
-  font-family: "Avenir";
+  font-family: Avenir;
   font-size: 16px;
-  color: "#677080";
+  color: #677080;
   margin-bottom: 8px;
 }
 .company_footer {
@@ -143,4 +149,102 @@
   display: flex;
 }
 .main_nav_box {
+}
+.discover_traackr_dropdown {
+  background-color: white;
+  display: flex;
+
+  width: 14vw;
+  flex-direction: column;
+  margin-left: 50px;
+
+  color: black;
+
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-family: Avenir;
+  font-size: 16px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+.meet_our_customer {
+  border-radius: 5px;
+  border-color: #250e62;
+  border-style: solid;
+  width: 190px;
+  height: 8vh;
+  padding-left: 20px;
+  border-width: 1px;
+  padding-top: 9px;
+}
+.customer_stories_para {
+  padding-left: 30%;
+  padding-right: 30%;
+  padding-top: 2%;
+}
+.explore_more_casestudy {
+  height: 8vh;
+  width: 20vw;
+  border-radius: 8px;
+  margin-left: 41%;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  color: #250e62;
+  border-color: black;
+
+  border-style: solid;
+  padding-top: 9px;
+  padding-left: 30px;
+}
+.contact_sale {
+  height: 8vh;
+  width: 15vw;
+  border-radius: 10px;
+  margin-left: 10%;
+  margin-top: 15px;
+  background-color: #f9423a;
+  display: flex;
+  justify-content: center;
+  padding-top: 13px;
+  color: white;
+}
+.latest-article {
+  padding-top: 20px;
+  padding-left: 50px;
+}
+.product_footer_head {
+  font-family: avenir;
+  font-size: 16px;
+  color: #250e62;
+}
+.company_footer_head {
+  font-family: avenir;
+  font-size: 16px;
+  color: #250e62;
+}
+.image_footer {
+  height: 3vh;
+  margin-right: 8px;
+  padding-top: 5px;
+}
+.image_footer2 {
+  margin-left: 8px;
+  padding-top: 5px;
+  height: 4vh;
+  width: 2vw;
+}
+.links_discover_tracckr_button {
+  text-decoration: none;
+  color: #250e62;
+}
+.links_discover_tracckr_button:hover {
+  text-decoration: none;
+  color: #f9423a;
+}
+.link_line {
+  height: 1px;
+  width: 90%;
+  background-color: black;
+  margin-left: 5px;
+  margin-left: 5px;
 }

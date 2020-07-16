@@ -14,6 +14,7 @@ export default class InfluencerImage extends React.Component {
               ? { border: "5px solid red", height: "12vh" }
               : null
           }
+          
         />
       </div>
     );

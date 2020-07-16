@@ -1,0 +1,36 @@
+.signup_main_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 18%;
+  padding-bottom: 8%;
+}
+.create_account {
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 28px;
+}
+.email {
+  margin-top: 20px;
+}
+.fill_details {
+  background-color: burlywood;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.enter {
+  margin-top: 5px;
+  height: 30px;
+
+  max-width: 65%;
+}
+.create {
+  font-size: 14px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 65%;
+  height: 30px;
+}

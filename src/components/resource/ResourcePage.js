@@ -5,9 +5,9 @@ import Header from "../header/Navigation";
 export default class ResourcePage extends Component {
   render() {
     return (
-      <div>
+      <div >
         <Hoc cmp={Header} />
-        <h1>hello from the resource page</h1>
+        <h1 >hello from the resource page</h1>
       </div>
     );
   }
